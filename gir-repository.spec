@@ -64,7 +64,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc README NEWS TODO AUTHORS
+%doc README NEWS AUTHORS
 %_datadir/gir/Atk-1.0.gir
 %_datadir/gir/Avahi-0.6.gir
 %_datadir/gir/AvahiCore-0.6.gir
