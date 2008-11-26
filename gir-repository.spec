@@ -31,7 +31,7 @@ BuildRequires: libgstreamer-plugins-base-devel
 BuildRequires: gtksourceview-devel
 BuildRequires: vte-devel
 BuildRequires: goocanvas-devel
-BuildRequires: libgupnp-devel
+BuildRequires: gupnp-devel
 BuildRequires: avahi-gobject-devel avahi-core-devel
 BuildRequires: unique-devel
 BuildRequires: gnome-menus-devel
