@@ -1,6 +1,6 @@
 %define name gir-repository
 %define version 0.6.1
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: GObject Introspection Repository
 Name: %{name}
