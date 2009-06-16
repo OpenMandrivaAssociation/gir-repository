@@ -46,6 +46,10 @@ BuildRequires: libwnck-devel
 BuildRequires: avahi-gobject-devel
 BuildRequires: unique-devel
 BuildRequires: gnome-menus-devel
+%if %git
+BuildRequires: gnome-common
+%endif
+
 Requires: gobject-introspection
 
 %description
