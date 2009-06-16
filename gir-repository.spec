@@ -41,7 +41,7 @@ BuildRequires: vte-devel
 BuildRequires: goocanvas-devel
 BuildRequires: gnome-keyring-devel
 BuildRequires: libwnck-devel
-BuildRequires: gupnp-devel
+#BuildRequires: gupnp-devel
 #BuildRequires: avahi-core-devel
 BuildRequires: avahi-gobject-devel
 BuildRequires: unique-devel
@@ -104,7 +104,7 @@ rm -rf %{buildroot}
 %_datadir/gir-%api/GstVideo-0.10.gir
 %_datadir/gir-%api/Gtk-2.0.gir
 %_datadir/gir-%api/GtkSource-2.2.gir
-%_datadir/gir-%api/GUPnP-1.0.gir
+#%_datadir/gir-%api/GUPnP-1.0.gir
 %_datadir/gir-%api/JSCore-1.0.gir
 %_datadir/gir-%api/Nautilus-1.0.gir
 %_datadir/gir-%api/Notify-0.4.gir
@@ -127,7 +127,7 @@ rm -rf %{buildroot}
 %_libdir/girepository-%api/GConf-2.0.typelib
 %_libdir/girepository-%api/GMenu-2.0.typelib
 %_libdir/girepository-%api/GSSDP-1.0.typelib
-%_libdir/girepository-%api/GUPnP-1.0.typelib
+#%_libdir/girepository-%api/GUPnP-1.0.typelib
 %_libdir/girepository-%api/Gdk-2.0.typelib
 %_libdir/girepository-%api/GdkPixbuf-2.0.typelib
 %_libdir/girepository-%api/GnomeKeyring-2.0.typelib
