@@ -86,7 +86,7 @@ rm -rf %{buildroot}
 %_datadir/gir-%api/DBus-1.0.gir
 %_datadir/gir-%api/GConf-2.0.gir
 %_datadir/gir-%api/GMenu-2.0.gir
-%_datadir/gir-%api/GSSDP-1.0.gir
+#%_datadir/gir-%api/GSSDP-1.0.gir
 %_datadir/gir-%api/Gdk-2.0.gir
 %_datadir/gir-%api/GdkPixbuf-2.0.gir
 %_datadir/gir-%api/GnomeKeyring-2.0.gir
@@ -130,7 +130,7 @@ rm -rf %{buildroot}
 %_libdir/girepository-%api/DBus-1.0.typelib
 %_libdir/girepository-%api/GConf-2.0.typelib
 %_libdir/girepository-%api/GMenu-2.0.typelib
-%_libdir/girepository-%api/GSSDP-1.0.typelib
+#%_libdir/girepository-%api/GSSDP-1.0.typelib
 #%_libdir/girepository-%api/GUPnP-1.0.typelib
 %_libdir/girepository-%api/Gdk-2.0.typelib
 %_libdir/girepository-%api/GdkPixbuf-2.0.typelib
