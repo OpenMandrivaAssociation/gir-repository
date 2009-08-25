@@ -1,8 +1,8 @@
 %define name gir-repository
-%define version 0.6.3
+%define version 0.6.4
 %define git 0
 %if %git
-%define release %mkrel 0.%git.1
+%define release %mkrel 1
 %else
 %define release %mkrel 1
 %endif
