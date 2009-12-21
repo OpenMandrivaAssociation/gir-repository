@@ -4,7 +4,7 @@
 %if %git
 %define release %mkrel 0.%git.1
 %else
-%define release %mkrel 3
+%define release %mkrel 4
 %endif
 
 %define api 1.0
@@ -72,11 +72,13 @@ autoreconf -fi
 %install
 rm -rf %{buildroot}
 %makeinstall_std
+rm %buildroot%_datadir/gir-%api/Atk-1.0.gir
 rm %buildroot%_datadir/gir-%api/Pango-1.0.gir
 rm %buildroot%_datadir/gir-%api/PangoCairo-1.0.gir
 rm %buildroot%_datadir/gir-%api/PangoFT2-1.0.gir
 rm %buildroot%_datadir/gir-%api/PangoXft-1.0.gir
 rm %buildroot%_datadir/gir-%api/Gst*0.10.gir
+rm %buildroot%_libdir/girepository-%api/Atk-1.0.typelib
 rm %buildroot%_libdir/girepository-%api/Gst*0.10.typelib
 rm %buildroot%_libdir/girepository-%api/Pango-1.0.typelib
 rm %buildroot%_libdir/girepository-%api/PangoCairo-1.0.typelib
@@ -90,7 +92,6 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc README NEWS AUTHORS
-%_datadir/gir-%api/Atk-1.0.gir
 #%_datadir/gir-%api/Avahi-0.6.gir
 #%_datadir/gir-%api/AvahiCore-0.6.gir
 %_datadir/gir-%api/Babl-0.0.gir
@@ -114,7 +115,6 @@ rm -rf %{buildroot}
 %_datadir/gir-%api/Vte-1.0.gir
 %_datadir/gir-%api/WebKit-1.0.gir
 %_datadir/gir-%api/Wnck-1.0.gir
-%_libdir/girepository-%api/Atk-1.0.typelib
 #%_libdir/girepository-%api/Avahi-0.6.typelib
 #%_libdir/girepository-%api/AvahiCore-0.6.typelib
 %_libdir/girepository-%api/Babl-0.0.typelib
