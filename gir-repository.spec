@@ -85,12 +85,12 @@ rm %buildroot%_datadir/gir-%api/PangoFT2-1.0.gir
 rm %buildroot%_datadir/gir-%api/PangoXft-1.0.gir
 rm %buildroot%_datadir/gir-%api/Gdk-2.0.gir
 rm %buildroot%_datadir/gir-%api/GdkPixbuf-2.0.gir
-rm %buildroot%_datadir/gir-%api/Gst*0.10.gir
+#rm %buildroot%_datadir/gir-%api/Gst*0.10.gir
 rm %buildroot%_datadir/gir-%api/Gtk-2.0.gir
 rm %buildroot%_libdir/girepository-%api/Atk-1.0.typelib
 rm %buildroot%_libdir/girepository-%api/Gdk-2.0.typelib
 rm %buildroot%_libdir/girepository-%api/GdkPixbuf-2.0.typelib
-rm %buildroot%_libdir/girepository-%api/Gst*0.10.typelib
+#rm %buildroot%_libdir/girepository-%api/Gst*0.10.typelib
 rm %buildroot%_libdir/girepository-%api/Gtk-2.0.typelib
 rm %buildroot%_libdir/girepository-%api/Pango-1.0.typelib
 rm %buildroot%_libdir/girepository-%api/PangoCairo-1.0.typelib
