@@ -4,7 +4,7 @@
 %if %git
 %define release %mkrel 0.%git.1
 %else
-%define release %mkrel 5
+%define release %mkrel 6
 %endif
 
 %define api 1.0
