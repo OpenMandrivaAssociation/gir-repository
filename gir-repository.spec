@@ -18,11 +18,12 @@ Source0:       %{name}-%{git}.tar.bz2
 %else
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 %endif
-Patch:  gir-repository-0.6.4-new-gobject-introspection.patch
+Patch0:  gir-repository-0.6.4-new-gobject-introspection.patch
 #gw: add dbus-glib binding needed for gnome-bluetooth
 #patch from Fedora
 # https://bugzilla.gnome.org/show_bug.cgi?id=604167 
 Patch1: gir-repo-install-dbus-glib.patch
+Patch2: gir-repository-0.6.5-fix-babl-build.patch
 License: LGPLv2+
 Group: Development/C
 Url: http://www.gnome.org
@@ -64,8 +65,7 @@ This is a repository of GIR interface description files.
 %else
 %setup -q
 %endif
-%patch -p1
-%patch1 -p1
+%apply_patches
 autoreconf -fi
 
 %build
