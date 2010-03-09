@@ -4,7 +4,7 @@
 %if %git
 %define release %mkrel -c %git 1
 %else
-%define release %mkrel 8
+%define release %mkrel 9
 %endif
 
 %define api 1.0
@@ -45,7 +45,6 @@ BuildRequires: gtksourceview-devel
 BuildRequires: vte-devel
 BuildRequires: goocanvas-devel
 BuildRequires: libgnome-keyring-devel
-BuildRequires: libwnck-devel
 #BuildRequires: avahi-core-devel
 BuildRequires: avahi-gobject-devel
 %if %git
@@ -88,6 +87,7 @@ rm -f %buildroot%_datadir/gir-%api/Gst*0.10.gir
 rm %buildroot%_datadir/gir-%api/Gtk-2.0.gir
 rm -f %buildroot%_datadir/gir-%api/Unique-1.0.gir
 rm -f %buildroot%_datadir/gir-%api/WebKit-1.0.gir
+rm -f %buildroot%_datadir/gir-%api/Wnck-1.0.gir
 rm %buildroot%_libdir/girepository-%api/Atk-1.0.typelib
 rm -f %buildroot%_libdir/girepository-%api/JSCore-1.0.typelib
 rm %buildroot%_libdir/girepository-%api/Gdk-2.0.typelib
@@ -101,6 +101,7 @@ rm %buildroot%_libdir/girepository-%api/PangoFT2-1.0.typelib
 rm %buildroot%_libdir/girepository-%api/PangoXft-1.0.typelib
 rm -f %buildroot%_libdir/girepository-%api/Unique-1.0.typelib
 rm -f %buildroot%_libdir/girepository-%api/WebKit-1.0.typelib
+rm -f %buildroot%_libdir/girepository-%api/Wnck-1.0.typelib
 
 %clean
 rm -rf %{buildroot}
@@ -126,7 +127,6 @@ rm -rf %{buildroot}
 %_datadir/gir-%api/Poppler-0.8.gir
 %_datadir/gir-%api/Soup-2.4.gir
 %_datadir/gir-%api/Vte-1.0.gir
-%_datadir/gir-%api/Wnck-1.0.gir
 #%_libdir/girepository-%api/Avahi-0.6.typelib
 #%_libdir/girepository-%api/AvahiCore-0.6.typelib
 %_libdir/girepository-%api/Babl-0.0.typelib
@@ -144,7 +144,6 @@ rm -rf %{buildroot}
 %_libdir/girepository-%api/Poppler-0.8.typelib
 %_libdir/girepository-%api/Soup-2.4.typelib
 %_libdir/girepository-%api/Vte-1.0.typelib
-%_libdir/girepository-%api/Wnck-1.0.typelib
 
 %_libdir/*.la
 %_libdir/libgirepo-DBus-custom.so
