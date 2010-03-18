@@ -4,7 +4,7 @@
 %if %git
 %define release %mkrel -c %git 1
 %else
-%define release %mkrel 9
+%define release %mkrel 10
 %endif
 
 %define api 1.0
@@ -18,7 +18,6 @@ Source0:       %{name}-%{git}.tar.bz2
 %else
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 %endif
-Patch0:  gir-repository-0.6.4-new-gobject-introspection.patch
 #gw: add dbus-glib binding needed for gnome-bluetooth
 #patch from Fedora
 # https://bugzilla.gnome.org/show_bug.cgi?id=604167 
@@ -51,7 +50,7 @@ BuildRequires: avahi-gobject-devel
 BuildRequires: gnome-common
 %endif
 
-Requires: gobject-introspection
+Requires: %mklibname girepository 1.0 0
 
 %description
 This is a repository of GIR interface description files.
@@ -79,6 +78,7 @@ rm -f %buildroot%_datadir/gir-%api/JSCore-1.0.gir
 rm %buildroot%_datadir/gir-%api/Pango-1.0.gir
 rm %buildroot%_datadir/gir-%api/PangoCairo-1.0.gir
 rm %buildroot%_datadir/gir-%api/PangoFT2-1.0.gir
+rm %buildroot%_datadir/gir-%api/PangoX-1.0.gir
 rm %buildroot%_datadir/gir-%api/PangoXft-1.0.gir
 rm %buildroot%_datadir/gir-%api/Gdk-2.0.gir
 rm %buildroot%_datadir/gir-%api/GdkPixbuf-2.0.gir
@@ -98,6 +98,7 @@ rm %buildroot%_libdir/girepository-%api/Gtk-2.0.typelib
 rm %buildroot%_libdir/girepository-%api/Pango-1.0.typelib
 rm %buildroot%_libdir/girepository-%api/PangoCairo-1.0.typelib
 rm %buildroot%_libdir/girepository-%api/PangoFT2-1.0.typelib
+rm %buildroot%_libdir/girepository-%api/PangoX-1.0.typelib
 rm %buildroot%_libdir/girepository-%api/PangoXft-1.0.typelib
 rm -f %buildroot%_libdir/girepository-%api/Unique-1.0.typelib
 rm -f %buildroot%_libdir/girepository-%api/WebKit-1.0.typelib
@@ -112,7 +113,7 @@ rm -rf %{buildroot}
 %doc README NEWS AUTHORS
 #%_datadir/gir-%api/Avahi-0.6.gir
 #%_datadir/gir-%api/AvahiCore-0.6.gir
-%_datadir/gir-%api/Babl-0.0.gir
+%_datadir/gir-%api/Babl-0.1.gir
 %_datadir/gir-%api/DBus-1.0.gir
 %_datadir/gir-%api/DBusGLib-1.0.gir
 %_datadir/gir-%api/GConf-2.0.gir
@@ -123,13 +124,12 @@ rm -rf %{buildroot}
 %_datadir/gir-%api/GUPnP-1.0.gir
 %_datadir/gir-%api/Nautilus-1.0.gir
 %_datadir/gir-%api/Notify-0.4.gir
-%_datadir/gir-%api/PangoX-1.0.gir
 %_datadir/gir-%api/Poppler-0.8.gir
 %_datadir/gir-%api/Soup-2.4.gir
 %_datadir/gir-%api/Vte-1.0.gir
 #%_libdir/girepository-%api/Avahi-0.6.typelib
 #%_libdir/girepository-%api/AvahiCore-0.6.typelib
-%_libdir/girepository-%api/Babl-0.0.typelib
+%_libdir/girepository-%api/Babl-0.1.typelib
 %_libdir/girepository-%api/DBus-1.0.typelib
 %_libdir/girepository-%api/DBusGLib-1.0.typelib
 %_libdir/girepository-%api/GConf-2.0.typelib
@@ -140,7 +140,6 @@ rm -rf %{buildroot}
 %_libdir/girepository-%api/GtkSource-2.2.typelib
 %_libdir/girepository-%api/Nautilus-1.0.typelib
 %_libdir/girepository-%api/Notify-0.4.typelib
-%_libdir/girepository-%api/PangoX-1.0.typelib
 %_libdir/girepository-%api/Poppler-0.8.typelib
 %_libdir/girepository-%api/Soup-2.4.typelib
 %_libdir/girepository-%api/Vte-1.0.typelib
