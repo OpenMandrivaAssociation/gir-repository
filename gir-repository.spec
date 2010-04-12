@@ -97,7 +97,7 @@ rm -f %buildroot%_libdir/girepository-%api/GMenu-2.0.typelib
 rm -f %buildroot%_libdir/girepository-%api/Gst*0.10.typelib
 rm -f %buildroot%_libdir/girepository-%api/GSSDP-1.0.typelib
 rm %buildroot%_libdir/girepository-%api/Gtk-2.0.typelib
-rm %buildroot%_libdir/girepository-%api/GUPnP-1.0.typelib
+rm -f %buildroot%_libdir/girepository-%api/GUPnP-1.0.typelib
 rm %buildroot%_libdir/girepository-%api/Pango-1.0.typelib
 rm %buildroot%_libdir/girepository-%api/PangoCairo-1.0.typelib
 rm %buildroot%_libdir/girepository-%api/PangoFT2-1.0.typelib
