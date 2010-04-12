@@ -4,7 +4,7 @@
 %if %git
 %define release %mkrel -c %git 1
 %else
-%define release %mkrel 10
+%define release %mkrel 11
 %endif
 
 %define api 1.0
@@ -36,7 +36,6 @@ BuildRequires: GL-devel
 BuildRequires: libpoppler-glib-devel
 BuildRequires: libGConf2-devel
 BuildRequires: libsoup-devel
-BuildRequires: gupnp-devel
 BuildRequires: babl-devel
 BuildRequires: nautilus-devel
 BuildRequires: libnotify-devel
@@ -84,7 +83,9 @@ rm %buildroot%_datadir/gir-%api/Gdk-2.0.gir
 rm %buildroot%_datadir/gir-%api/GdkPixbuf-2.0.gir
 rm -f %buildroot%_datadir/gir-%api/GMenu-2.0.gir
 rm -f %buildroot%_datadir/gir-%api/Gst*0.10.gir
+rm -f %buildroot%_datadir/gir-%api/GSSDP-1.0.gir
 rm %buildroot%_datadir/gir-%api/Gtk-2.0.gir
+rm -f %buildroot%_datadir/gir-%api/GUPnP-1.0.gir
 rm -f %buildroot%_datadir/gir-%api/Unique-1.0.gir
 rm -f %buildroot%_datadir/gir-%api/WebKit-1.0.gir
 rm -f %buildroot%_datadir/gir-%api/Wnck-1.0.gir
@@ -94,7 +95,9 @@ rm %buildroot%_libdir/girepository-%api/Gdk-2.0.typelib
 rm %buildroot%_libdir/girepository-%api/GdkPixbuf-2.0.typelib
 rm -f %buildroot%_libdir/girepository-%api/GMenu-2.0.typelib
 rm -f %buildroot%_libdir/girepository-%api/Gst*0.10.typelib
+rm -f %buildroot%_libdir/girepository-%api/GSSDP-1.0.typelib
 rm %buildroot%_libdir/girepository-%api/Gtk-2.0.typelib
+rm %buildroot%_libdir/girepository-%api/GUPnP-1.0.typelib
 rm %buildroot%_libdir/girepository-%api/Pango-1.0.typelib
 rm %buildroot%_libdir/girepository-%api/PangoCairo-1.0.typelib
 rm %buildroot%_libdir/girepository-%api/PangoFT2-1.0.typelib
@@ -117,11 +120,9 @@ rm -rf %{buildroot}
 %_datadir/gir-%api/DBus-1.0.gir
 %_datadir/gir-%api/DBusGLib-1.0.gir
 %_datadir/gir-%api/GConf-2.0.gir
-%_datadir/gir-%api/GSSDP-1.0.gir
 %_datadir/gir-%api/GnomeKeyring-2.0.gir
 %_datadir/gir-%api/GooCanvas-0.10.gir
 %_datadir/gir-%api/GtkSource-2.2.gir
-%_datadir/gir-%api/GUPnP-1.0.gir
 %_datadir/gir-%api/Nautilus-1.0.gir
 %_datadir/gir-%api/Notify-0.4.gir
 %_datadir/gir-%api/Poppler-0.8.gir
@@ -133,8 +134,6 @@ rm -rf %{buildroot}
 %_libdir/girepository-%api/DBus-1.0.typelib
 %_libdir/girepository-%api/DBusGLib-1.0.typelib
 %_libdir/girepository-%api/GConf-2.0.typelib
-%_libdir/girepository-%api/GSSDP-1.0.typelib
-%_libdir/girepository-%api/GUPnP-1.0.typelib
 %_libdir/girepository-%api/GnomeKeyring-2.0.typelib
 %_libdir/girepository-%api/GooCanvas-0.10.typelib
 %_libdir/girepository-%api/GtkSource-2.2.typelib
