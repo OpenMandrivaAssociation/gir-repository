@@ -2,7 +2,7 @@
 %define version 0.6.5
 %define git 20100622
 %if %git
-%define release %mkrel 12.%git.1
+%define release %mkrel 12.%git.2
 %else
 %define release %mkrel 1
 %endif
@@ -43,7 +43,7 @@ BuildRequires: avahi-gobject-devel
 BuildRequires: gnome-common
 %endif
 
-Requires: %mklibname girepository 1.0 0
+Requires: %mklibname girepository 1.0 1
 
 %description
 This is a repository of GIR interface description files.
