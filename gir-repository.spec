@@ -2,7 +2,7 @@
 %define version 0.6.5
 %define git 20100622
 %if %git
-%define release %mkrel 12.%git.2
+%define release %mkrel 12.%git.3
 %else
 %define release %mkrel 1
 %endif
@@ -24,7 +24,6 @@ Group: Development/C
 Url: http://www.gnome.org
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: gobject-introspection-devel >= 0.6.1
-BuildRequires: dbus-glib-devel
 BuildRequires: xft2-devel
 BuildRequires: libxfixes-devel
 BuildRequires: libxml2-devel
@@ -67,6 +66,7 @@ autoreconf -fi
 rm -rf %{buildroot}
 %makeinstall_std
 rm -v %buildroot%_datadir/gir-%api/Atk-1.0.gir
+rm -f %buildroot%_datadir/gir-%api/DBus*-1.0.gir
 rm -v -f %buildroot%_datadir/gir-%api/JSCore-1.0.gir
 rm -v %buildroot%_datadir/gir-%api/Pango-1.0.gir
 rm -v %buildroot%_datadir/gir-%api/PangoCairo-1.0.gir
@@ -82,6 +82,7 @@ rm -v -f %buildroot%_datadir/gir-%api/Unique-1.0.gir
 rm -v -f %buildroot%_datadir/gir-%api/WebKit-1.0.gir
 rm -v -f %buildroot%_datadir/gir-%api/Wnck-1.0.gir
 rm -v %buildroot%_libdir/girepository-%api/Atk-1.0.typelib
+rm -v %buildroot%_libdir/girepository-%api/DBus*-1.0.typelib
 rm -v -f %buildroot%_libdir/girepository-%api/JSCore-1.0.typelib
 rm -v -f %buildroot%_libdir/girepository-%api/GConf-2.0.typelib
 rm -v -f %buildroot%_libdir/girepository-%api/GMenu-2.0.typelib
@@ -107,8 +108,6 @@ rm  -rf %{buildroot}
 #%_datadir/gir-%api/Avahi-0.6.gir
 #%_datadir/gir-%api/AvahiCore-0.6.gir
 %_datadir/gir-%api/Babl-0.1.gir
-%_datadir/gir-%api/DBus-1.0.gir
-%_datadir/gir-%api/DBusGLib-1.0.gir
 %_datadir/gir-%api/GnomeKeyring-2.0.gir
 %_datadir/gir-%api/GooCanvas-0.10.gir
 %_datadir/gir-%api/GtkSource-2.2.gir
@@ -119,8 +118,6 @@ rm  -rf %{buildroot}
 #%_libdir/girepository-%api/Avahi-0.6.typelib
 #%_libdir/girepository-%api/AvahiCore-0.6.typelib
 %_libdir/girepository-%api/Babl-0.1.typelib
-%_libdir/girepository-%api/DBus-1.0.typelib
-%_libdir/girepository-%api/DBusGLib-1.0.typelib
 %_libdir/girepository-%api/GnomeKeyring-2.0.typelib
 %_libdir/girepository-%api/GooCanvas-0.10.typelib
 %_libdir/girepository-%api/GtkSource-2.2.typelib
@@ -130,5 +127,4 @@ rm  -rf %{buildroot}
 %_libdir/girepository-%api/Vte-1.0.typelib
 
 %_libdir/*.la
-%_libdir/libgirepo-DBus-custom.so
 #%_libdir/pkgconfig/%name-1.0.pc
