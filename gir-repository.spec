@@ -1,10 +1,11 @@
 %define name gir-repository
 %define version 0.6.6
 %define git 20100907
+%define rel 2
 %if %git
-%define release %mkrel -c %git 1
+%define release %mkrel -c %git %rel
 %else
-%define release %mkrel 1
+%define release %mkrel %rel
 %endif
 
 %define api 1.0
@@ -19,6 +20,7 @@ Source0:       %{name}-%{git}.tar.xz
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 %endif
 Patch0: gir-repository-disable-gtk.patch
+Patch1: gir-repository-fix-goo-build.patch
 License: LGPLv2+
 Group: Development/C
 Url: http://www.gnome.org
@@ -33,7 +35,7 @@ BuildRequires: babl-devel
 BuildRequires: nautilus-devel
 BuildRequires: libnotify-devel
 BuildRequires: gtksourceview-devel
-#BuildRequires: goocanvas-devel
+BuildRequires: goocanvas-devel
 #BuildRequires: libgnome-keyring-devel
 #BuildRequires: avahi-core-devel
 BuildRequires: avahi-gobject-devel
@@ -107,14 +109,14 @@ rm  -rf %{buildroot}
 %doc README NEWS AUTHORS
 %_datadir/gir-%api/Babl-0.1.gir
 #%_datadir/gir-%api/GnomeKeyring-2.0.gir
-#%_datadir/gir-%api/GooCanvas-0.10.gir
+%_datadir/gir-%api/GooCanvas-0.10.gir
 %_datadir/gir-%api/GtkSource-2.2.gir
 %_datadir/gir-%api/Nautilus-1.0.gir
 %_datadir/gir-%api/Notify-0.4.gir
 %_datadir/gir-%api/Poppler-0.8.gir
 %_libdir/girepository-%api/Babl-0.1.typelib
 #%_libdir/girepository-%api/GnomeKeyring-2.0.typelib
-#%_libdir/girepository-%api/GooCanvas-0.10.typelib
+%_libdir/girepository-%api/GooCanvas-0.10.typelib
 %_libdir/girepository-%api/GtkSource-2.2.typelib
 %_libdir/girepository-%api/Nautilus-1.0.typelib
 %_libdir/girepository-%api/Notify-0.4.typelib
