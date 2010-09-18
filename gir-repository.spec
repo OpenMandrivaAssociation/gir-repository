@@ -1,7 +1,7 @@
 %define name gir-repository
 %define version 0.6.6
 %define git 20100907
-%define rel 2
+%define rel 3
 %if %git
 %define release %mkrel -c %git %rel
 %else
@@ -36,7 +36,7 @@ BuildRequires: nautilus-devel
 BuildRequires: libnotify-devel
 BuildRequires: gtksourceview-devel
 BuildRequires: goocanvas-devel
-#BuildRequires: libgnome-keyring-devel
+BuildRequires: libgnome-keyring-devel
 #BuildRequires: avahi-core-devel
 BuildRequires: avahi-gobject-devel
 %if %git
@@ -108,14 +108,14 @@ rm  -rf %{buildroot}
 %defattr(-,root,root)
 %doc README NEWS AUTHORS
 %_datadir/gir-%api/Babl-0.1.gir
-#%_datadir/gir-%api/GnomeKeyring-2.0.gir
+%_datadir/gir-%api/GnomeKeyring-2.0.gir
 %_datadir/gir-%api/GooCanvas-0.10.gir
 %_datadir/gir-%api/GtkSource-2.2.gir
 %_datadir/gir-%api/Nautilus-1.0.gir
 %_datadir/gir-%api/Notify-0.4.gir
 %_datadir/gir-%api/Poppler-0.8.gir
 %_libdir/girepository-%api/Babl-0.1.typelib
-#%_libdir/girepository-%api/GnomeKeyring-2.0.typelib
+%_libdir/girepository-%api/GnomeKeyring-2.0.typelib
 %_libdir/girepository-%api/GooCanvas-0.10.typelib
 %_libdir/girepository-%api/GtkSource-2.2.typelib
 %_libdir/girepository-%api/Nautilus-1.0.typelib
