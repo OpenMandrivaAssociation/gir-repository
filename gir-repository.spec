@@ -1,7 +1,7 @@
 %define name gir-repository
 %define version 0.6.6
 %define git 20100907
-%define rel 3
+%define rel 4
 %if %git
 %define release %mkrel -c %git %rel
 %else
