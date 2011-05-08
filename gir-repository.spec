@@ -31,7 +31,6 @@ BuildRequires: libxfixes-devel
 BuildRequires: libxml2-devel
 BuildRequires: GL-devel
 BuildRequires: libpoppler-glib-devel
-BuildRequires: babl-devel
 BuildRequires: nautilus-devel
 BuildRequires: libnotify-devel
 BuildRequires: gtksourceview-devel
@@ -107,14 +106,12 @@ rm  -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc README NEWS AUTHORS
-%_datadir/gir-%api/Babl-0.1.gir
 %_datadir/gir-%api/GnomeKeyring-2.0.gir
 %_datadir/gir-%api/GooCanvas-0.10.gir
 %_datadir/gir-%api/GtkSource-2.2.gir
 %_datadir/gir-%api/Nautilus-1.0.gir
 %_datadir/gir-%api/Notify-0.4.gir
 %_datadir/gir-%api/Poppler-0.8.gir
-%_libdir/girepository-%api/Babl-0.1.typelib
 %_libdir/girepository-%api/GnomeKeyring-2.0.typelib
 %_libdir/girepository-%api/GooCanvas-0.10.typelib
 %_libdir/girepository-%api/GtkSource-2.2.typelib
