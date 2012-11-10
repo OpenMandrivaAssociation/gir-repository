@@ -1,0 +1,11 @@
+diff -p -up gir-repository/gir/Makefile.am~ gir-repository/gir/Makefile.am
+--- gir-repository/gir/Makefile.am~	2010-09-07 17:56:47.000000000 +0200
++++ gir-repository/gir/Makefile.am	2010-09-18 16:31:38.000000000 +0200
+@@ -415,6 +415,7 @@ GOOCANVAS_INCLUDEDIR=`pkg-config --varia
+ GooCanvas-0.10.gir: $(GOOCANVAS_GIR_DEPS)
+ 	$(INTROSPECTION_SCANNER) -v --namespace GooCanvas --nsversion=0.10 \
+ 	    --add-include-path=$(srcdir) --add-include-path=. \
++	    --strip-prefix=Goo \
+              --include=Gtk-2.0 \
+ 	     --library=goocanvas \
+ 	     --libtool="$(LIBTOOL)" \

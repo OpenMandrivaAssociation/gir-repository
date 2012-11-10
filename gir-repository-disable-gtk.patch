@@ -1,0 +1,14 @@
+diff -p -up gir-repository/config.h.in~ gir-repository/config.h.in
+diff -p -up gir-repository/configure.ac~ gir-repository/configure.ac
+--- gir-repository/configure.ac~	2010-06-22 19:24:02.000000000 +0200
++++ gir-repository/configure.ac	2010-07-30 10:56:29.000000000 +0200
+@@ -52,7 +52,8 @@ dnl poppler
+ GIR_CHECK(Poppler, poppler-glib >= 0.8)
+ 
+ dnl gtk+ - has upstream support since 2.19.2
+-GIR_CHECK(Gtk, gtk+-2.0 >= 1.12.0)
++dnl GIR_CHECK(Gtk, gtk+-2.0 >= 1.12.0)
++AM_CONDITIONAL(BUILD_GTK, 0)
+ GDK_TARGET=
+ GDK_TARGET_GIRS=
+ if $have_Gtk; then
