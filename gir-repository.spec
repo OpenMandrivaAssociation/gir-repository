@@ -47,7 +47,7 @@ This is a repository of GIR interface description files.
 %setup -q
 %endif
 
-%apply_patches
+%autopatch -p1
 %if %{git}
 ./autogen.sh -V
 %else
