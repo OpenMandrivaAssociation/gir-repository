@@ -11,7 +11,7 @@ Version:	0.6.6
 Release:	0.%{git}.8
 License:	LGPLv2+
 Group:		Development/C
-Url:		http://www.gnome.org
+Url:		https://www.gnome.org
 %if %{git}
 Source0:	%{name}-%{git}.tar.xz
 %else
