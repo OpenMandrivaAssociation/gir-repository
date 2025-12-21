@@ -19,6 +19,11 @@ Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz
 %endif
 Patch0:		gir-repository-disable-gtk.patch
 Patch1:		gir-repository-fix-goo-build.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(xft)
 BuildRequires:	pkgconfig(xfixes)
